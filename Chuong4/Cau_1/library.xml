@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thu_vien>
+    <danh_muc>
+        <the_loai ten="Công nghệ thông tin">
+            <sach>
+                <cuon_sach ma_isbn="S001">
+                    <ten_sach> Thôn Phệ Tinh Không</ten_sach>
+                    <tac_gia>Ngã Cật Tây Hồng Thị</tac_gia>
+                    <nam_xuat_ban>2010</nam_xuat_ban>
+                    <nha_xuat_ban>Chua co</nha_xuat_ban>
+                    <ngon_ngu>Tiếng Việt</ngon_ngu>
+                    <vi_tri_ke>
+                        <khu>Khu A</khu>
+                        <ke>Kệ 05</ke>
+                        <tang>Tầng 2</tang>
+                    </vi_tri_ke>
+                </cuon_sach>
+
+                <cuon_sach ma_isbn="S002">
+                    <ten_sach>Đấu Phá Thương Khung</ten_sach>
+                    <tac_gia>Thiên Tằm Thổ Đậu</tac_gia>
+                    <nam_xuat_ban>2011</nam_xuat_ban>
+                    <nha_xuat_ban>Chưa có</nha_xuat_ban>
+                    <ngon_ngu>Tiếng Việt</ngon_ngu>
+                    <vi_tri_ke>
+                        <khu>Khu A</khu>
+                        <ke>Kệ 06</ke>
+                        <tang>Tầng 2</tang>
+                    </vi_tri_ke>
+                </cuon_sach>
+
+                <cuon_sach ma_isbn="S003">
+                    <ten_sach>Phàm Nhân Tu Tiên</ten_sach>
+                    <tac_gia>Vong Ngữ</tac_gia>
+                    <nam_xuat_ban>2008</nam_xuat_ban>
+                    <nha_xuat_ban>Chưa có</nha_xuat_ban>
+                    <ngon_ngu>Tiếng Việt</ngon_ngu>
+                    <vi_tri_ke>
+                        <khu>Khu A</khu>
+                        <ke>Kệ 07</ke>
+                        <tang>Tầng 2</tang>
+                    </vi_tri_ke>
+                </cuon_sach>
+
+                <cuon_sach ma_isbn="S004">
+                    <ten_sach>Tiên Nghịch</ten_sach>
+                    <tac_gia>Nhĩ Căn</tac_gia>
+                    <nam_xuat_ban>2009</nam_xuat_ban>
+                    <nha_xuat_ban>Chưa có</nha_xuat_ban>
+                    <ngon_ngu>Tiếng Việt</ngon_ngu>
+                    <vi_tri_ke>
+                        <khu>Khu B</khu>
+                        <ke>Kệ 01</ke>
+                        <tang>Tầng 1</tang>
+                    </vi_tri_ke>
+                </cuon_sach>
+
+                <cuon_sach ma_isbn="S005">
+                    <ten_sach>Già Thiên</ten_sach>
+                    <tac_gia>Thần Đông</tac_gia>
+                    <nam_xuat_ban>2010</nam_xuat_ban>
+                    <nha_xuat_ban>Chưa có</nha_xuat_ban>
+                    <ngon_ngu>Tiếng Việt</ngon_ngu>
+                    <vi_tri_ke>
+                        <khu>Khu B</khu>
+                        <ke>Kệ 02</ke>
+                        <tang>Tầng 1</tang>
+                    </vi_tri_ke>
+                </cuon_sach>
+            </sach>
+        </the_loai>
+    </danh_muc>
+</thu_vien>
