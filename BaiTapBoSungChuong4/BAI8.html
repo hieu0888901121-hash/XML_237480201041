@@ -1,38 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-</head>
 <body>
-    <h2>Kết quả xóa phần tử XML</h2>
-    <div id="demo"></div>
+    <h2>Kết quả sau khi xóa nhân viên</h2>
+    <p id="demo"></p>
+<script>
+    var xhttp = new XMLHttpRequest();
 
-    <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                myFunction(this);
-            }
-        };
-        xhttp.open("GET", "danhsachnhanvien.xml", true);
-        xhttp.send();
-
-        function myFunction(xml) {
-            var xmlDoc = xml.responseXML;
-            var root = xmlDoc.documentElement;
-            var manvList = xmlDoc.getElementsByTagName("manv");
-            var thongBao = "Không tìm thấy mã 001";
-
-            for (var i = 0; i < manvList.length; i++) {
-                if (manvList[i].childNodes[0].nodeValue.trim() == "001") {
-                    var nhanVienCanXoa = manvList[i].parentNode;
-                    root.removeChild(nhanVienCanXoa);
-                    thongBao = "Đã xóa thành công nhân viên mã 001 khỏi cây DOM!";
-                    break;
-                }
-            }
-            document.getElementById("demo").innerHTML = thongBao;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
         }
-    </script>
+    };
+
+    xhttp.open("GET", "danhsachnhanvien.xml", true);
+    xhttp.send();
+
+    function myFunction(xml) {
+        var xmlDoc, ds, nv, txt;
+        xmlDoc = xml.responseXML;
+        txt = "Số lượng nhân viên trước khi xóa: " +
+        xmlDoc.getElementsByTagName("nhanvien").length + "<br>";
+        ds = xmlDoc.getElementsByTagName("manv");
+        for (var i = 0; i < ds.length; i++) {
+            if (ds[i].textContent.trim() == "001") {
+                nv = ds[i].parentNode;
+                nv.parentNode.removeChild(nv);
+                break;
+            }
+        }
+        txt += "Số lượng nhân viên sau khi xóa: " +
+        xmlDoc.getElementsByTagName("nhanvien").length;
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script>
+
 </body>
 </html>
