@@ -2,10 +2,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 4: Sách có giá lớn hơn 30.00</title>
 </head>
 <body>
-    <h2>Danh sách sách có giá > 30.00</h2>
+    <h2>Danh sách category của từng cuốn sách</h2>
     <div id="demo"></div>
 
     <script>
@@ -23,11 +22,9 @@
             var books = xmlDoc.getElementsByTagName("book");
             var txt = "";
             for (var i = 0; i < books.length; i++) {
-                var price = parseFloat(books[i].getElementsByTagName("price")[0].textContent);
-                if (price > 30.00) {
-                    var title = books[i].getElementsByTagName("title")[0].textContent;
-                    txt += title + " - Giá: " + price + "<br>";
-                }
+                var title = books[i].getElementsByTagName("title")[0].textContent;
+                var category = books[i].getAttribute("category");
+                txt += "Sách: " + title + " - Thuộc tính category: " + category + "<br>";
             }
             document.getElementById("demo").innerHTML = txt;
         }
