@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bookstore>
 
-  <book category="cooking">
+  <book category="nau an">
     <title lang="en">Everyday Italian</title>
     <author>Giada De Laurentiis</author>
     <year>2005</year>
     <price>30.00</price>
   </book>
-  <book category="teenager">
+  <book category="vien tuong">
     <title lang="en">Harry Potter</title>
     <author>J K. Rowling</author>
     <year>2005</year>
     <price>29.99</price>
   </book>
-  <book category="children">
+  <book category="tre em">
     <title lang="en">Doraemon</title>
     <author>J Fujiko Fujio</author>
     <year>1999</year>
