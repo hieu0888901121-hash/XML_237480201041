@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Doan>
+    <Doan loai="xao">
+        <tenmon> khi dau cho xao me</tenmon>
+        <danhmuc> Khai vi</danhmuc>
+        <giatien> 1vnd </giatien>
+        <mota> thom tu nuoc, ngot tu xuong</mota>
+        <trangthai> het hang </trangthai>
+    </Doan>
+
+    <Doan loai="nuong">
+        <tenmon> hot vit nuong</tenmon>
+        <danhmuc> trang mieng</danhmuc>
+        <giatien> 2vnd </giatien>
+        <mota> an vo tang iq </mota>
+        <trangthai> con hang </trangthai>
+    </Doan>
+
+    <Doan loai="chien">
+        <tenmon> sasimi chien</tenmon>
+        <danhmuc> Khai vi</danhmuc>
+        <giatien> 1vnd </giatien>
+        <mota> thom tu nuoc, ngot tu xuong</mota>
+        <trangthai> het hang </trangthai>
+    </Doan>
+
+    <Doan loai="luoc">
+        <tenmon> ga luoc </tenmon>
+        <danhmuc> Khai vi</danhmuc>
+        <giatien> 1vnd </giatien>
+        <mota> thom tu nuoc, ngot tu xuong</mota>
+        <trangthai> het hang </trangthai>
+    </Doan>
+
+    <Doan loai="hap">
+        <tenmon> ga hap </tenmon>
+        <danhmuc> Khai vi</danhmuc>
+        <giatien> 1vnd </giatien>
+        <mota> thom tu nuoc, ngot tu xuong</mota>
+        <trangthai> het hang </trangthai>
+    </Doan>
+</Doan>
