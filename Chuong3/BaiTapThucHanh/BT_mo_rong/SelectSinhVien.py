@@ -1,23 +1,19 @@
 import xml.etree.ElementTree as ET
 
-# Đọc file XML
-tree = ET.parse("BT_mo_rong/Sinhvien.xml")
+tree = ET.parse("Sinhvien.xml")
 
-# Lấy phần tử gốc
 root = tree.getroot()
 
-# Nhập mã sinh viên cần tìm
-ma_can_tim = input("Nhap ma sinh vien: ")
+MaCanTim = input("Nhap ma sinh vien: ")
 
-# Biến kiểm tra có tìm thấy hay không
-tim_thay = False
+Tim = False
 
 # Duyệt danh sách sinh viên
 for sinhvien in root.findall("sinhvien"):
 
     masv = sinhvien.find("masv").text
 
-    if masv == ma_can_tim:
+    if masv == MaCanTim:
         hoten = sinhvien.find("hoten").text
         lop = sinhvien.find("lop").text
         diem = sinhvien.find("diem").text
@@ -27,9 +23,9 @@ for sinhvien in root.findall("sinhvien"):
         print("Lop:", lop)
         print("Diem:", diem)
 
-        tim_thay = True
+        Tim = True
         break
 
 # Nếu không tìm thấy
-if tim_thay == False:
+if Tim == False:
     print("Khong tim thay sinh vien!")

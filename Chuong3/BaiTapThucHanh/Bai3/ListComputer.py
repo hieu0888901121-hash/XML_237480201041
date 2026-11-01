@@ -1,9 +1,7 @@
 import xml.etree.ElementTree as ET
 
-# Đọc file XML
-tree = ET.parse("bai3/Computer.xml")
+tree = ET.parse("Computer.xml")
 
-# Lấy phần tử gốc
 root = tree.getroot()
 
 # Duyệt từng máy tính
@@ -15,9 +13,10 @@ for computer in root.findall("computer"):
     ram = computer.find("ram").text
 
     print(i, ".")
-    print("name:", name)
-    print("cpu:", cpu)
-    print("Ram:", ram)
+    print("name: ", name)
+    print("cpu: ", cpu)
+    print("ram: ", ram)
+
     print()
 
     i += 1

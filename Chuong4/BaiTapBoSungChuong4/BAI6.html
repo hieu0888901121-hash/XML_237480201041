@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-</head>
+<html>
 <body>
-    <h2>Kết quả tra cứu nhân viên</h2>
+    <h2>Thông tin nhân viên</h2>
     <div id="demo"></div>
 
     <script>
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                myFunction(this);
-            }
-        };
-        xhttp.open("GET", "danhsachnhanvien.xml", true);
-        xhttp.send();
 
-        function myFunction(xml) {
-            var xmlDoc = xml.responseXML;
-            var manvList = xmlDoc.getElementsByTagName("manv");
-            var txt = "Không tìm thấy nhân viên";
-            for (var i = 0; i < manvList.length; i++) {
-                if (manvList[i].childNodes[0].nodeValue.trim() == "002") {
-                    var parentNode = manvList[i].parentNode;
-                    var donvi = parentNode.getElementsByTagName("donvi")[0].childNodes[0].nodeValue;
-                    txt = "Đơn vị của nhân viên mã 002 là: " + donvi;
-                    break;
+        xhttp.onload = function() {
+            var xmlDoc = this.responseXML;
+            var list = xmlDoc.getElementsByTagName("manv");
+            var kq = "";
+
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].textContent == "002") {
+                    var nhanvien = list[i].parentNode;
+                    var donvi = nhanvien.getElementsByTagName("donvi")[0].textContent;
+
+                    kq = "Đơn vị: " + donvi;
                 }
             }
-            document.getElementById("demo").innerHTML = txt;
-        }
+
+            document.getElementById("demo").innerHTML = kq;
+        };
+
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
     </script>
 </body>
 </html>

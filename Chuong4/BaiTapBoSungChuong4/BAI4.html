@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-</head>
+<html>
 <body>
-    <h2>Danh sách sách có giá > 30.00</h2>
+    <h2>Sách có giá lớn hơn 30</h2>
     <div id="demo"></div>
 
     <script>
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                myFunction(this);
-            }
-        };
-        xhttp.open("GET", "books.xml", true);
-        xhttp.send();
 
-        function myFunction(xml) {
-            var xmlDoc = xml.responseXML;
+        xhttp.onload = function() {
+            var xmlDoc = this.responseXML;
             var books = xmlDoc.getElementsByTagName("book");
-            var txt = "";
+            var kq = "";
+
             for (var i = 0; i < books.length; i++) {
-                var price = parseFloat(books[i].getElementsByTagName("price")[0].textContent);
-                if (price > 30.00) {
-                    var title = books[i].getElementsByTagName("title")[0].textContent;
-                    txt += title + " - Giá: " + price + "<br>";
+                var price = Number(books[i].getElementsByTagName("price")[0].textContent);
+                var title = books[i].getElementsByTagName("title")[0].textContent;
+
+                if (price > 30) {
+                    kq += title + " - " + price + "<br>";
                 }
             }
-            document.getElementById("demo").innerHTML = txt;
-        }
+
+            document.getElementById("demo").innerHTML = kq;
+        };
+
+        xhttp.open("GET", "books.xml", true);
+        xhttp.send();
     </script>
 </body>
 </html>

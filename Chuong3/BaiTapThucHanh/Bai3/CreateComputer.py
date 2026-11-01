@@ -27,10 +27,24 @@ cpu2.text = "Core i7 3.6Ghz"
 ram2 = ET.SubElement(computer2, "ram")
 ram2.text = "16GB"
 
+# Máy tính 3
+computer3 = ET.SubElement(root, "computer")
+
+name3 = ET.SubElement(computer3, "name")
+name3.text = "Lenovo ThinkPack 2026"
+
+cpu3 = ET.SubElement(computer3, "cpu")
+cpu3.text = "Core i7 3.6Ghz"
+
+ram3 = ET.SubElement(computer3, "ram")
+ram3.text = "16GB"
+
+ssd3 = ET.SubElement(computer3, "ssd")
+ssd3.text = "256GB"
+
 # Tạo file XML
 tree = ET.ElementTree(root)
 
-# Định dạng XML cho đẹp
 ET.indent(tree, space="    ")
 
 tree.write("Computer.xml", encoding="utf-8", xml_declaration=True)

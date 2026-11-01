@@ -1,12 +1,9 @@
 import xml.etree.ElementTree as ET
 
-# Đọc file XML
-tree = ET.parse("bai2/hoso.xml")
+tree = ET.parse("hoso.xml")
 
-# Lấy phần tử gốc
 root = tree.getroot()
 
-# Tìm nhân viên có mã 002
 for nhanvien in root.findall("nhanvien"):
     manv = nhanvien.find("manv").text
 

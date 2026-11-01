@@ -1,41 +1,30 @@
-
 <!DOCTYPE html>
 <html>
 <body>
-<p id="demo"></p>
-<script>
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myFunction(this);
-        }
-    };
-    xhttp.open("GET", "books.xml", true);
-    xhttp.send();
-    function myFunction(xml) {
-        var xmlDoc, x, y, txt;
-        xmlDoc = xml.responseXML;
-        // tao nut book moi
-        x = xmlDoc.createElement("book");
-        // tao nut title
-        y = xmlDoc.createElement("title");
-        y.textContent = "Lap trinh Web";
-        x.appendChild(y);
-        // tao nut price
-        y = xmlDoc.createElement("price");
-        y.textContent = "100";
-        x.appendChild(y);
-        // them book moi vao books
-        xmlDoc.documentElement.appendChild(x);
-        // hien thi cac nut
-        var ds = xmlDoc.getElementsByTagName("book");
-        txt = "Số sách sau khi thêm: " + ds.length + "<br>";
-        for (var i = 0; i < ds.length; i++) {
-            txt += ds[i].getElementsByTagName("title")[0].textContent + "<br>";
-        }
-        document.getElementById("demo").innerHTML = txt;
-    }
-</script>
+    <h2>Thêm sách mới</h2>
+    <div id="demo"></div>
 
+    <script>
+        var xmlStr = "<bookstore><book><title>Sach A</title><price>20</price></book></bookstore>";
+
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xmlStr, "text/xml");
+
+        var book = xmlDoc.createElement("book");
+
+        var title = xmlDoc.createElement("title");
+        title.textContent = "Lap trinh JavaScript";
+
+        var price = xmlDoc.createElement("price");
+        price.textContent = "50";
+
+        book.appendChild(title);
+        book.appendChild(price);
+
+        xmlDoc.documentElement.appendChild(book);
+
+        document.getElementById("demo").innerHTML =
+            new XMLSerializer().serializeToString(xmlDoc);
+    </script>
 </body>
 </html>

@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-</head>
+<html>
 <body>
-    <h2>Kết quả kiểm tra nút XML</h2>
-    <div id="demo"></div>
+    <h2>Kết quả XML</h2>
+    <p id="demo"></p>
 
     <script>
-        var xmlStr = "<class><student><name>Tran B</name><age>15</age></student></class>";
+        var xmlStr = "<class><student><name>Nguyen Van A</name><age>20</age></student></class>";
+
         var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(xmlStr, "application/xml");
+        var xmlDoc = parser.parseFromString(xmlStr, "text/xml");
 
-        var rootNode = xmlDoc.documentElement;
-        var firstChild = rootNode.firstElementChild;
+        var root = xmlDoc.documentElement;
 
-        var txt = "Tên nút gốc: " + rootNode.nodeName + "<br>" +
-                  "Tên thẻ nút con đầu tiên: " + firstChild.nodeName;
-
-        document.getElementById("demo").innerHTML = txt;
+        document.getElementById("demo").innerHTML =
+            "Tên nút gốc: " + root.nodeName + "<br>" +
+            "Tên nút con đầu tiên: " + root.firstElementChild.nodeName;
     </script>
 </body>
 </html>
